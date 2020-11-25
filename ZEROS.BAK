@@ -1,0 +1,31 @@
+#include<iostream.h>
+#include<conio.h>
+void push(int ar[],int n)
+{
+	static int count=0;
+	for(int i=0;i<n;i++)
+	{
+		if(ar[i]!=0)
+		{
+			ar[count++]=ar[i];
+		}
+	}
+	while(count<n)
+	{
+		ar[count++]=0;
+	}
+}
+void main()
+{
+	int ar[]={1,6,0,2,0,4,0,0,1};
+	int n=sizeof(ar)/sizeof(ar[0]);
+	clrscr();
+	cout<<sizeof(ar)<<"and"<<sizeof(ar[0]);
+	push(ar,n);
+	cout<<"\n After pushing all the zeros";
+	for (int i=0;i<n;i++)
+	{
+		cout<<ar[i];
+	}
+	getch();
+}
